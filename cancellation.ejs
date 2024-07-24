@@ -1,0 +1,87 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<style>
+
+
+body
+{
+ background-color :#5797cf;
+ background-image: linear-gradient(to right, rgba(10, 10, 10, 0.7) 0 100%),url('https://modhop.com/wp-content/uploads/2016/03/2.-JAL-SKY-SUITE-III.jpg');
+ background-size: cover;
+ margin: 0px;
+ padding: 0px;
+
+ font-family: Times New Roman;
+ font-size:20px;
+ font-weight: bolder;
+}
+.booking_header{background: transparent;}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-form {
+    color:white;
+    width: 300px;
+    padding: 20px;
+    
+    border-radius: 10px;
+    background:transparent;
+    
+    
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+<div class="container">
+<form class="login-form" method="post" action="/cancellation">
+<center><h2>Cancellation</h2></center>
+<div class="input-group">
+<label for="pnr">PNR No:</label>
+<input type="text" id="pnr" name="pnr" placeholder="Enter your PNR No" required>
+</div>
+<input type="submit" placeholder="Cancel Flight"> <br><br>
+  
+</form>
+</div>
+
+</body>
+</html>

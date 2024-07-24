@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<title>Flight Booking Form</title>
+<style>
+    body
+{
+ background-color :#5797cf;
+ background-image: linear-gradient(to right, rgba(12, 11, 11, 0.7) 0 100%),url('https://www.boston.com/wp-content/uploads/2021/02/Mint_Suite_-_Tuft__Needle_Sleep_Experience-601988b0c5efe.jpg');
+ margin: 0px;
+ background-size: cover;
+ padding: 0px;
+
+ font-family: Times New Roman;
+ font-size:20px;
+ font-weight: bolder;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.login-form {
+    color:white;
+    width: 300px;
+    padding: 20px;
+    padding-top: 100px;
+    
+    border-radius: 10px;
+    background:transparent;
+    
+    
+}
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.booking_header{background: transparent;}
+
+
+.text
+{
+ color: black;
+ font-size: 15px;
+}
+
+.k{margin:50px; width:35%;}
+
+</style>
+</head>
+<body>
+    <%- include('header.ejs') %>
+<div class="container">
+    <form class="login-form k">
+        <% if(result.length){ result.forEach((row)=> {%>
+            <table>
+      <tr><td><lable>source:</td><td><lable><%= row.source %></lable></td></tr><br>
+      <tr><td><lable>destination:</lable></td><td><lable><%= row.destination %></lable></td></tr>
+      <tr><td><lable>flight name:</lable></td><td><lable><%= row.flight_name %></lable></td></tr>
+      <tr><td><lable>date:</lable></td><td><lable><%= row.date %></lable></td></tr>
+      <tr><td><lable>time:</lable></td><td><lable><%= row.time %></lable></td></tr>
+      <tr><td colspan="2" style="color:rgb(117, 190, 232);"><lable>Total no of seats available:</lable></td></tr>
+      <tr><td><lable>Economy Window:</lable></td><td><lable><%= row.ews %></lable></td></tr>
+      <tr><td><lable>Economy non-window:</lable></td><td><lable><%= row.en %></lable></td></tr>
+      <tr><td><lable>First class window:</lable></td><td><lable><%= row.fws %></lable></td></tr>
+      <tr><td><lable>First class non window:</lable></td><td><lable><%= row.fn %></lable></td></tr>
+      <tr><td><lable>Premimum Economy Window:</lable></td><td><lable><%= row.epw %></lable></td></tr>
+      <tr><td><lable>Premimum Economy non Window:</lable></td><td><lable><%= row.epn %></lable></td></tr>
+      <tr><td><lable>Business Window:</lable></td><td><lable><%= row.bw %></lable></td></tr>
+      <tr><td><lable>Business non window:</lable></td><td><lable><%= row.bn %></lable></td></tr>
+    </table>
+        <% });} %>
+    
+    </form>
+<form class="login-form" method="post" action="/book">
+    <center><h2 style="color:#849448">Flight Booking Form</h2></center>
+<div class="input-group">
+<label for="num-adults">Number of adults:</label>
+<input type="number" id="num-adults" name="adults" min="1" value="1" required><br>
+</div>
+<div class="input-group">
+<label for="num-children">Number of children:</label>
+<input type="number" id="num-children" name="children" min="0" value="0" required><br>
+</div>
+<div class="input-group">
+<label for="num-children">Number of senior-citizens:</label>
+<input type="number" id="num-children" name="seniorcitizens" min="0" value="0" required><br>
+</div>
+<div class="input-group">
+<label for="window-seats">Number of window seats:</label>
+<input type="number" id="window-seats" name="windowseats" min="0" value="0" required><br>
+</div>
+<div class="input-group">
+<label for="class-of-service">Class of service:</label>
+<select id="class-of-service" name="class_of_service" required>
+<option value="economy">Economy</option>
+<option value="premium-economy">Premium Economy</option>
+<option value="business">Business</option>
+<option value="first-class">First Class</option>
+</select>
+</div>
+<div><center>
+<input type="submit" value="Submit"></center>
+</div>
+</form>
+</div>
+</body>
+</html>

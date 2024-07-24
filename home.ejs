@@ -1,0 +1,183 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<style>
+
+body
+{
+ background-color :black;
+ margin: 0px;
+ padding: 0px;
+
+ font-family: Times New Roman;
+ font-size:20px;
+ font-weight: bolder;
+}
+.gap
+{
+ margin-top: 100px;
+ background-color: #BC8F8F;
+}
+
+.inline
+{
+ display: inline-block;
+}
+
+
+.box1
+{
+ background-color:#A9A9A9;
+ background-image: url('https://tse2.mm.bing.net/th?id=OIP.DEfwIylutvauNYDtVujllAHaEK&pid=Api&P=0&h=180');
+ background-repeat:no-repeat;background-size:cover;
+ width: 100%;
+ border-radius: 5px;
+ padding: 35px;
+}
+
+.form1
+{
+ width: 260px;
+ border-radius: 3px;
+ border-color:black;
+ height: 45px;
+ display: inline-block;
+ border: 2;
+ margin: 2px;
+ transition: border-color 0.3s;
+}
+
+.form1:hover
+{
+ border-color: black;
+}
+
+
+
+.search
+{
+ align: center;
+ background-color:black;
+ height: 45px;
+ width: 100px;
+ border: none;
+ border-radius: 8px;
+ color: white;
+ transition: color 1s, background-color 1s,opacity 1s;
+ margin: 3px;
+}
+
+.search:hover
+{
+ color:#004098;
+ background-color:white;
+}
+
+.search:active
+{
+ opacity: 0.3;
+ color:#004098;
+ background-color:white;
+}
+
+nav
+{
+ display: block;
+}
+
+
+.background-wrapper {
+			background-color: #000;
+			color: #bfbfbf;
+			
+			background-size: cover;
+			background-attachment: fixed;
+			background-position: center;
+			position: relative;
+            
+		}
+        
+
+        ul.icons li {
+				display: inline-block;
+				padding: 0 2rem 0 0;
+				font-size: 36px;
+			}
+            #footer {
+		padding: 4rem 0 2rem 0 ;
+		background: #6e0a0a;
+		text-align: center;
+		width: 100% !important;
+		bottom: 0;
+
+	}
+
+.box
+{
+ background-color:#BC8F8F;
+ padding: 20px;
+ margin: 0px;
+ 
+}
+.list-group
+	{
+		margin: 0;
+	}
+
+	.list-group-item{
+		margin: none;
+		border: none;
+		border-radius: 0;
+		background-color: black;
+		text-align: center;
+	}
+</style>
+</head>
+
+<body>
+
+	<%- include('header.ejs') %>
+
+<div class="gap"> </div>
+
+<div class="box1">
+
+<h1 style="color:white; text-align:center;"> Flight Booking </h1>
+<form action="/searchflight" method="post">
+
+<br>
+<input type="text" placeholder="From" class="form1" name="from">
+<input type="text" placeholder="To" class="form1" name="to">
+<input type="date" placeholder="Travel Date" class="form1" name="date"><br><br>
+
+<center>
+<button class="search" type="submit"> Search Flight </button><br>
+</center>
+</form>
+</div>
+<br>
+<div class="background-wrapper" style="background-image: url(images/airline/b.jpg);">
+    <div style="text-align: center; padding: 10rem; color:white">
+        <h3>come fly with us to desired places & we'll take care of your comfort and safety</h3>
+        <hr width="30%" align="center">
+        <h1>Airline-X</h1>
+  </div>
+</div>
+<footer id="footer">
+<div class="container-fluid">
+  <ul class="icons">
+      <li><a href="#" class="fa fa-twitter" style="color: grey"></a></li>
+      <li><a href="#" class="fa fa-facebook" style="color: grey"></a></li>
+      <li><a href="#" class="fa fa-instagram" style="color: grey"></a></li>
+      <li><a href="#" class="fa fa-envelope" style="color: grey"></a></li>
+  </ul>
+</div>
+<div class="copyright">
+  &copy; Airline-X. All rights reserved.
+</div>
+</footer>
+</center>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <title>payment</title>
+    <style>
+      body{background-image: linear-gradient(to right, rgba(10, 10, 10, 0.7) 0 100%),url('https://modhop.com/wp-content/uploads/2016/03/2.-JAL-SKY-SUITE-III.jpg');background-size: cover;font-family: Times New Roman;}
+      .h1{color:white;}
+      h4{color:white;}
+      .d1 p{color:white;}
+      .p1{font-size: medium;}
+      h1{color:white;font-size:large;}
+      .t1{height:100px;width:100%;}
+      img{height:30px;width:40px;}
+      .d2{display: flex;}
+      tr{height:60px;}
+      td{color:white;}
+      .im1{height:100px;width:100px;}
+      .d3{height:80%;width:50%;margin-left:25%;margin-top:5%;background:transparent;padding:20px;}
+      .booking_header{background: transparent;}
+      /*.booking_header
+{
+ position: fixed;
+ top: 0;
+ padding-top:30px;
+ width: 100%;
+ background-color: black;
+ background: transparent;
+ height: 60px;
+}
+
+.button1
+{
+ 
+ background: transparent;
+ color: White;
+ font-weight: bold;
+ font-size: 20px;
+ margin-right: 10px;
+ border: none;
+ display: inline-block;
+ height:30px;
+ transition: background-color 1s, color 1s, opacity 1s;
+}
+.button1:hover
+{
+ background-color:green;
+ color: black;
+}
+.button1:active
+{
+ opacity: 0.3;
+}
+
+.right
+{
+ text-align: right;
+}
+
+.text
+{
+ color: black;
+ font-size: 15px;
+}
+a{
+  color:white;
+}*/
+    </style>
+  </head>
+  <body>
+    <div class="booking_header right">
+      <nav>
+        <div class="d">
+          <div class="yes">
+            <p class="ma">Airline-X</p>
+          </div>     
+      <div class="button1">
+      <a href="/home">
+      Home
+      </a>
+      </div>
+      <div class="button1">
+      <a href="/login">
+      Log in
+      </a>
+      </div>
+      <div class="button1">
+        <a href="/cancellation">
+        Cancel Flight
+        </a>
+        </div>
+      <div class="button1">
+        <a href="/register">
+        Sign up
+        </a>
+        </div>
+      <div class="button1">
+      <a href="/contact">
+      Contact Us
+      </a>
+      </div>
+      <div class="button1">
+      <a href="/about">
+      About Us
+      </a>
+      </div>
+      </div>
+      </nav>
+      </div>
+    <div class="d3">
+    <center><h3 class="h1">PAYMENT INFORMATION</h3></center><hr>
+    <div class="d2">
+      <div style="width:50%">
+        <h4><b>Online Booking Payment</b></h4> 
+      </div>
+      <div class="d1" style="width:50%;float: right;">
+        <b><p>Total Amount to be Paid</p></b>
+        <b><p class="p1">$<%= total_fare%></p></b>
+      </div>
+    </div><hr>
+    <div>
+      <h1>Payment Methods</h1><br>
+      <p style="color:white;">Please select your preferred mehtod of payment from the choices shown below:</p>
+      <table class="t1">
+        <tr>
+          <td>Credit/Debit Card :</td>
+          <td><img src="https://3.bp.blogspot.com/-G_If6Wikbpw/UULHxLp7_RI/AAAAAAAABg0/ilbnVx56jBs/s1600/logo_visa.jpg"></td>
+          <td><img src="https://tse3.mm.bing.net/th?id=OIP.Lbksc7lbljjj95yMNK53WAHaE3&pid=Api&P=0&h=180"></td>
+          <td><img src="https://tse4.mm.bing.net/th?id=OIP.nW5oWJ8hB5I5vqAQKzsyJgHaFj&pid=Api&P=0&h=180"></td>
+          <td><img src="https://cdn3.iconfinder.com/data/icons/payment-methods-18/512/Americanexpress_american_express_debit-512.png"></td>
+          <td><img src="https://logos-download.com/wp-content/uploads/2016/04/JCB_logo_logotype_emblem_Japan_Credit_Bureau.png"></td>
+        </tr>
+        <tr>
+          <td>Other Payment Types :</td>
+          <td><img src="https://tse2.mm.bing.net/th?id=OIP.fZV_qWRr5O2P9oG9kZg29wHaHa&pid=Api&P=0&h=180"></td>
+          <td><img src="https://tse2.mm.bing.net/th?id=OIP.gNp2bI0lLhiH38Crcp_P-gAAAA&pid=Api&P=0&h=180"></td>
+          <td><img src="https://pngimg.com/uploads/mastercard/mastercard_PNG14.png"></td>
+        </tr>
+        <tr><td>Scan the QR to pay using UPI</td></tr>
+      </table>
+      <img class="im1" src="https://www.kaspersky.com/content/en-global/images/repository/isc/2020/9910/a-guide-to-qr-codes-and-how-to-scan-qr-codes-2.png">
+    </div>
+    <center>
+    <div><form method="post" action="/pay">
+      <label style="color:white;"><b>Enter the Amount to be Paid:</b></lable>
+      <input type="number" name="amount" value="amount"><br><br>
+      <input style="background-color: yellow;" type="submit" value="Pay">
+    </form>
+    </div></center>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<style>
+
+body
+{
+ background-color :#5797cf;
+ background-image: linear-gradient(to right, rgba(10, 10, 10, 0.7) 0 100%),url('https://modhop.com/wp-content/uploads/2016/03/2.-JAL-SKY-SUITE-III.jpg');
+ background-size: cover;
+ margin: 0px;
+ padding: 0px;
+
+ font-family: Times New Roman;
+ font-size:20px;
+ font-weight: bolder;
+}
+.booking_header{background: transparent;}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-form {
+    color:white;
+    width: 300px;
+    padding: 20px;
+    
+    border-radius: 10px;
+    background:transparent;
+    }
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+    <div class="container">
+        <% if(mes=="addflight") {%>
+        <form class="login-form" method="post" action="/update">
+        <center><h2>Add Flight</h2></center>
+        <div class="input-group">
+        <label for="flightname">Flight name:</label>
+        <input type="text" id="flightname" name="flightname" placeholder="Enter Flight Name" required>
+        </div>
+        <div class="input-group">
+        <label for="form">From:</label>
+        <input type="text" id="from" name="from" placeholder="Enter Source location" required>
+        </div>
+        <div class="input-group">
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to" placeholder="Enter Destination location" required>
+        </div>
+        <div class="input-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" placeholder="YYYY-MM-DD" required>
+        </div>
+        <div class="input-group">
+        <label for="date">Time:</label>
+        <input type="text" id="time" name="time" placeholder="Enter Time of Departure" required>
+        </div>
+        <input type="submit" placeholder="Update"> <br><br>
+        <!--<div class="text" style="color:white">Dont have an Account? Register <a href="/register" class="text" style="color:yellow"> here </a></div>-->
+        </form> <% } 
+        else { %>
+            <form class="login-form" method="post" action="/delete">
+    <center><h2>Delete Flight</h2></center>
+    <div class="input-group">
+    <label for="flightname">Flight Name:</label>
+    <input type="text" id="flightname" name="flightname" placeholder="Enter Flight Name" required>
+    </div>
+    <div class="input-group">
+    <label for="from">From:</label>
+    <input type="text" id="from" name="from" placeholder="Enter Source location" required>
+    </div>
+    <div class="input-group">
+    <label for="to">To:</label>
+    <input type="text" id="to" name="to" placeholder="Enter Destination location" required>
+    </div>
+    <div class="input-group">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" placeholder="YYYY-MM-DD" required>
+    </div>
+    <div class="input-group">
+    <label for="date">Time:</label>
+    <input type="text" id="time" name="time" placeholder="Enter Time of Departure" required>
+    </div>
+    <input type="submit" placeholder="Delete"> <br><br>
+    <!--<div class="text" style="color:white">Dont have an Account? Register <a href="/register" class="text" style="color:yellow"> here </a></div>-->
+    </form>
+    <% } %>
+        
+</div>
+
+</body>
+</html>
